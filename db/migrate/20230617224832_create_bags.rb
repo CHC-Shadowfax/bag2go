@@ -4,7 +4,7 @@ class CreateBags < ActiveRecord::Migration[7.0]
       t.string :name
       t.text :description
       t.integer :sku
-      t.text :attributes
+      t.text :features
       t.float :price_day
       t.boolean :available, default: true
       t.boolean :reserved, default: false

@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_232425) do
     t.string "name"
     t.text "description"
     t.integer "sku"
-    t.text "attributes"
+    t.text "features"
     t.float "price_day"
     t.boolean "available", default: true
     t.boolean "reserved", default: false

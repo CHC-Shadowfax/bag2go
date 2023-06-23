@@ -1,0 +1,14 @@
+<h1> All bags </h1>
+
+<ul>
+  <% @bags.each do |bag| %>
+    <li>
+      <%= link_to bag.name, bag_path(bag) %>
+      <%= bag.price_day %>
+      <%= bag.description %>
+      <%= bag.sku %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New bag", new_bag_path %>

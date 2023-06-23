@@ -1,10 +1,12 @@
 class BagsController < ApplicationController
+  before_action :set_bag, only: %i[show edit update destroy]
+
   def index
     @bags = Bag.all
   end
 
   def show
-    @bag = Bag.find(params[:id])
+
   end
 
   def new
@@ -21,7 +23,29 @@ class BagsController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    if @bag.update(bag_params)
+      redirect_to bag_path(@bag), notice: "Bag was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @bag.destroy
+    redirect_to bags_path, notice: "Bag was successfully destroyed.", status: :see_other
+  end
+
+
   private
+  
+  def set_bag
+    @bag = Bag.find(params[:id])
+  end
 
   def bag_params
     params.require(:bag).permit(:name, :description, :price_day, :sku)

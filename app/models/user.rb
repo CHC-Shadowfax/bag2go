@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :bags
+  has_many :bookings
+
+  validates :user_type, presence: true, inclusion: { in: %w[owner renter] }
 end

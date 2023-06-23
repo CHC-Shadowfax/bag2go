@@ -18,7 +18,8 @@ class BookingsController < ApplicationController
     @booking.book_total_price = @booking_days * @bag.price_day
     @booking.status = "reserved"
     if @booking.save
-      redirect_to bag_booking_path(@bag, @booking)
+      # redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end

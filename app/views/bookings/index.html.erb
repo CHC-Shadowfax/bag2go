@@ -1,12 +1,13 @@
 <h1> All bookings </h1>
-
 <ul>
+<% @bookings.each do |booking| %>
   <%= booking.bag.name %>
-  <%= booking.total_price %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
-  <%= booking.booking_desc %>
-  <%= booking.status %>
+  <%#= booking.total_price %>
+  <%#= booking.start_date %>
+  <%#= booking.end_date %>
+  <%#= booking.booking_desc %>
+  <%#= booking.status %>
+ <% end %>
 </ul>
 
 <%= link_to "Go to bags", bags_path %>

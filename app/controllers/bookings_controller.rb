@@ -25,6 +25,16 @@ class BookingsController < ApplicationController
     end
   end
 
+  def my_prbookings
+    @bookings = Booking.where(status: "reserved")
+  end
+
+  def update_status
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = params[:update_status]
+    redirect_to bags_path
+  end
+
   private
 
   def set_booking
@@ -38,6 +48,10 @@ class BookingsController < ApplicationController
 
   def set_bag
     @bag = Bag.find(params[:bag_id])
+  end
+
+  def status_params
+    params.require(:booking).permit(:status)
   end
 
 end

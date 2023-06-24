@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   resources :bags do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :show, :edit, :update, :destroy]
+  resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
+    collection do
+      get :my_prbookings
+    end
+    patch 'bookings/mypr_bookings', to: 'bookings#update_status', as: :update_status
+  end
 end

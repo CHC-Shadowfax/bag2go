@@ -9,6 +9,10 @@ class BagsController < ApplicationController
 
   end
 
+  def my_bags
+    @bags = Bag.where(user: current_user)
+  end
+
   def new
     @bag = Bag.new
   end
@@ -42,7 +46,7 @@ class BagsController < ApplicationController
 
 
   private
-  
+
   def set_bag
     @bag = Bag.find(params[:id])
   end

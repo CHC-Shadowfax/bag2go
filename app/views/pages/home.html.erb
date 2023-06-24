@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center text-center">
+    <h1 class="m-3"><strong>Bags2go!</strong></h1>
+    <p>Rent your bags with us!</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 border">
+      <h2 class="text-center m-1">Bags</h2>
+      <p>Choose a bag you like!</p>
+      <p class="text-center"> <%= link_to "See our Bags!", bags_path, class: "btn btn-outline-primary" %> </p>
+    </div>
+    <div class="col-md-4 border">
+      <h2 class="text-center m-1">Bookings</h2>
+      <p>See the bookings you currently have!</p>
+      <p class="text-center"> <%= link_to "See your Bookings!", bookings_path, class: "btn btn-outline-success" %> </p>
+    </div>
+    <div class="col-md-4 border">
+      <h2 class="text-center m-1">Bag Owner</h2>
+      <p>See the bags you have for rent!</p>
+    </div>
+  </div>
+</div>

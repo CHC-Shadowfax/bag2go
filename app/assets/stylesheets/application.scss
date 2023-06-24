@@ -1,5 +1,5 @@
 // Graphical variables
-@import "config/fonts";
+@import "config/fonts"; // Importing fonts
 @import "config/colors";
 @import "config/bootstrap_variables";
 
@@ -10,3 +10,25 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+h1 {
+  color: 	#550000;
+    font-family: Nunito;
+    font-size: 50px;
+  }
+
+h2 {
+  color: 	black;
+  font-family: Nunito;
+  font-size: 30px;
+  &:hover {
+    color: #9d8144;
+  }
+}
+body {
+  background: #e8eff0; // Using this variable
+}
+
+p {
+  padding: $spacer ($spacer * 3);
+  color: black;}

@@ -8,4 +8,5 @@ class Booking < ApplicationRecord
   validates :book_total_price, presence: true, numericality: { greater_than: 0 }
   validates :real_end_date, comparison: { greater_than: Time.now }, allow_nil: true
   validates :booking_desc, presence: true, length: { minimum: 10 }
+  validates :status, presence: true, inclusion: { in: %w[reserved confirm active cancelled completed] }
 end

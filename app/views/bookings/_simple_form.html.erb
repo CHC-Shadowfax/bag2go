@@ -1,0 +1,6 @@
+ <%= simple_form_for [@bag, @booking] do |f| %>
+  <%= f.input :start_date, placeholder: 'Fecha inicio' %>
+  <%= f.input :end_date, placeholder: 'Fecha Final' %>
+  <%= f.input :booking_desc, placeholder: 'Escribe un mensaje para tu anfitríon' %>
+  <%= f.submit "Save", class: "btn btn-flat" %>
+<% end %>

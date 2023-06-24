@@ -1,0 +1,8 @@
+<div>
+  <% bookings.each do |booking| %>
+    <%= render "binfo", booking: booking %>
+    <p>
+      <%= link_to "Confirm Booking", booking_update_status_path(booking, update_status: "confirm"), data: {turbo_method: :patch, turbo_confirm: 'Are you sure you want to confirm this booking?'} %>
+    </p>
+  <% end %>
+</div>

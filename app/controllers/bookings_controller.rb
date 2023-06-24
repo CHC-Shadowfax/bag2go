@@ -40,6 +40,10 @@ class BookingsController < ApplicationController
     redirect_to bags_path
   end
 
+  def my_br
+    @bookings = Booking.where(status: "reserved", bag: current_user.bags)
+  end
+
   private
 
   def set_booking

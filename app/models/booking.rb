@@ -9,4 +9,5 @@ class Booking < ApplicationRecord
   validates :real_end_date, comparison: { greater_than: Time.now }, allow_nil: true
   validates :booking_desc, presence: true, length: { minimum: 10 }
   validates :status, presence: true, inclusion: { in: %w[reserved confirm active cancelled completed] }
+  
 end

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
     collection do
       get :my_prbookings
+      get :my_bookings
       end
     patch 'bookings/mypr_bookings', to: 'bookings#update_status', as: :update_status
   end

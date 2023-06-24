@@ -29,6 +29,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(status: "reserved")
   end
 
+  def my_bookings
+    @bookings = Booking.where(user: current_user)
+  end
+
   def update_status
     @booking = Booking.find(params[:booking_id])
     @booking.update(status: params[:update_status])

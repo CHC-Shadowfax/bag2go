@@ -31,7 +31,8 @@ class BookingsController < ApplicationController
 
   def update_status
     @booking = Booking.find(params[:booking_id])
-    @booking.status = params[:update_status]
+    @booking.update(status: params[:update_status])
+    flash[:notice] = "Booking status updated!"
     redirect_to bags_path
   end
 

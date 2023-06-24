@@ -1,7 +1,7 @@
 <h1> All bookings </h1>
 <ul>
-<% @bookings.each do |booking| %>
-  <%= booking.bag.name %>
+ <% @bookings.each do |booking| %>
+  <li> <%= booking.bag.name %> </li>
   <%#= booking.total_price %>
   <%#= booking.start_date %>
   <%#= booking.end_date %>

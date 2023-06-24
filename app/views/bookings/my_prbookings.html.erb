@@ -3,3 +3,38 @@
 
 <%= render 'bookings/list', bookings: @bookings %>
 <%= link_to "Back to all bookings", bookings_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Examples: do not erase
+<!--<%= link_to "Confirm Booking", booking_update_status_path(booking, update_status: "confirm"), data: {turbo_method: :patch, turbo_confirm: 'Are you sure you want to confirm this booking?'} %>
+<%= link_to "Active Booking", booking_update_status_path(booking, update_status: "active"), data: {turbo_method: :patch, turbo_confirm: 'Start booking?'} %>
+<%= link_to "Booking completed", booking_update_status_path(booking, update_status: "completed"), data: {turbo_method: :patch, turbo_confirm: 'Booking completed'} %>
+<%= link_to "Reservations", booking_update_status_path(booking, update_status: "reserved"), data: {turbo_method: :patch, turbo_confirm: 'Go to reservations'} %>
+<%= link_to "Booking cancelled", booking_update_status_path(booking, update_status: "cancelled"), data: {turbo_method: :patch, turbo_confirm: 'Booking cancelled'} %>

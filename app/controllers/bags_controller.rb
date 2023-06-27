@@ -6,7 +6,6 @@ class BagsController < ApplicationController
   end
 
   def show
-
   end
 
   def my_bags

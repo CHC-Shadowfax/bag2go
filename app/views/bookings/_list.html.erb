@@ -4,6 +4,7 @@
     <p>
       <%= link_to "Confirm Booking", booking_update_status_path(booking, update_status: "confirm"), data: {turbo_method: :patch, turbo_confirm: 'Are you sure you want to confirm this booking?'} %>
       <%= link_to "Reject Booking", booking_update_status_path(booking, update_status: "cancelled"), data: {turbo_method: :patch, turbo_confirm: 'Are you sure you want to cancell this booking?'} %>
+      <% end %>
     </p>
   <% end %>
 </div>

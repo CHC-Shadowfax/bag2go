@@ -29,6 +29,11 @@
       <h2 class="text-center m-1">My Requested Bags</h2>
       <% bags_as_customer.each do |bag| %>
         <%= link_to "Bag #{bag.id}", bag %>
+      <% end %>
+      <br/>
+    <h2 class="text-center m-1">My placed bookings</h2>
+      <% bookings.each do |booking| %>
+        <%= link_to "Booking #{booking.id}", [booking.bag, booking] %>
         <br/>
       <% end %>
     </div>

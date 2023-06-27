@@ -7,6 +7,12 @@ class User < ApplicationRecord
   has_many :bags
   has_many :bookings
 
+  # Son logs bookings que ha recibido los bags del usuario
+  has_many :bookings_as_owner, through: :bags, source: :bookings
+
+  # Son los bags que ha reservado el usuario
+  has_many :bags_as_customer, through: :bookings, source: :bag
+
   validates :user_type, presence: true, inclusion: { in: %w[owner renter] }
 
 

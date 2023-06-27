@@ -3,7 +3,14 @@
 <div>
   <%= link_to "Edit this bag", edit_bag_path(@bag) %> |
   <%= link_to "Back to bags", bags_path %>
-  <%= link_to "New Booking", new_bag_booking_path(@bag) %>
+
+  <% if @bag.user_id != current_user.id %>
+    <%= link_to "New Booking", new_bag_booking_path(@bag) %>
+  <% end %>
+
+  <% if @bag.user_id == current_user.id %>
+    <%= link_to "Bookings", bag_bookings_path(@bag) %>
+  <% end %>
 
   <%= link_to "Delete",
     bag_path(@bag),

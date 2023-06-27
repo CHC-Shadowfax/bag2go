@@ -1,13 +1,12 @@
 <h1> All bookings </h1>
-<ul>
- <% @bookings.each do |booking| %>
-  <li> <%= booking.bag.name %> </li>
-  <%#= booking.total_price %>
-  <%#= booking.start_date %>
-  <%#= booking.end_date %>
-  <%#= booking.booking_desc %>
-  <%#= booking.status %>
- <% end %>
-</ul>
+
+<% @bookings.each do |booking| %>
+  <%# Puedes ponerlo como [@bag, booking] y va adivinar que te refieres a bag_booking_path %>
+  <%= link_to "Booking #{booking.id}", bag_booking_path(@bag, booking) %>
+<% end %>
+
+<br/>
+<br/>
+<br/>
 
 <%= link_to "Go to bags", bags_path %>

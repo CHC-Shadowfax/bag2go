@@ -6,7 +6,6 @@ class BagsController < ApplicationController
   end
 
   def show
-
   end
 
   def my_bags
@@ -52,6 +51,6 @@ class BagsController < ApplicationController
   end
 
   def bag_params
-    params.require(:bag).permit(:name, :description, :price_day, :sku)
+    params.require(:bag).permit(:name, :description, :price_day, :sku, :photo)
   end
 end

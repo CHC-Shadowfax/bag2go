@@ -1,5 +1,10 @@
 <h1> My Bookings </h1>
 
+<% @bookings.each do |booking| %>
+  <%= link_to "Booking #{booking.id}", booking %>
+<% end %>
+
 
 <%= render 'bookings/list', bookings: @bookings %>
+
 <%= link_to "Back to all bookings", bookings_path %>

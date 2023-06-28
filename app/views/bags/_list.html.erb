@@ -2,8 +2,8 @@
   <% bags.each do |bag| %>
     <%= render "bag", bag: bag %>
   <div>
-  <%= link_to "Edit this bag", edit_bag_path(bag) %> |
 
+  <%= link_to "Edit this bag", edit_bag_path(bag) %> |
   <%= link_to "Delete",
     bag_path(bag),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}

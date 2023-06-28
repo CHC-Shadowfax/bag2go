@@ -1,13 +1,19 @@
 class BookingsController < ApplicationController
+  before_action :set_bag
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-  before_action :set_bag, only: [:new, :create]
+
+  helper_method :booking
 
   def index
-    @bookings = Booking.all
+    @bookings = @bag.bookings
   end
 
   def new
-    @booking = Booking.new
+    @booking = @bag.bookings.new
+  end
+
+  def show
+    @booking = @bag.bookings.find(params[:id])
   end
 
   def create
@@ -17,9 +23,10 @@ class BookingsController < ApplicationController
     @booking_days = (@booking.end_date - @booking.start_date).to_i
     @booking.book_total_price = @booking_days * @bag.price_day
     @booking.status = "reserved"
+
     if @booking.save
       # redirect_to booking_path(@booking)
-      redirect_to bookings_path
+      redirect_to bag_bookings_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,10 +40,13 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
-  def update_status
-    @booking = Booking.find(params[:booking_id])
-    @booking.update(status: params[:update_status])
-    flash[:notice] = "Booking status updated!"
+  def update
+    if @booking.update(status: params[:update_status])
+      flash[:notice] = "Booking status updated!"
+    else
+      flash[:alert] = "Booking status not updated!"
+    end
+
     redirect_to bags_path
   end
 
@@ -46,8 +56,11 @@ class BookingsController < ApplicationController
 
   private
 
+  attr_reader :booking
+
+  # Always scope your queries to the resource that you are nesting in.
   def set_booking
-    @booking = Booking.find(params[:id])
+    @booking = @bag.bookings.find(params[:id])
   end
 
   def booking_params
@@ -62,5 +75,4 @@ class BookingsController < ApplicationController
   def status_params
     params.require(:booking).permit(:status)
   end
-
 end

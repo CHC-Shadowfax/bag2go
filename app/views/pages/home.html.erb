@@ -1,26 +1,41 @@
 <div class="container">
   <div class="row justify-content-center text-center">
     <h1 class="m-3"><strong>Bags2go!</strong></h1>
-    <p>Rent your bags with us!</p>
+    <p>We have the perfect bag, rent with us!</p>
   </div>
 </div>
 
 <div class="container">
   <div class="d-flex justify-content-between">
     <div class="m-1 p-5 border">
-      <h2 class="text-center m-1">Bags</h2>
+      <h2 class="text-center m-1">All Bags</h2>
       <p>Choose a bag you like!</p>
       <p class="text-center"> <%= link_to "See our Bags!", bags_path, class: "btn btn-outline-primary" %> </p>
     </div>
     <div class="m-1 p-5 border">
-      <h2 class="text-center m-1">Bookings</h2>
-      <p>See the bookings you currently have!</p>
-      <p class="text-center"> <%= link_to "See your Bookings!", my_bookings_bookings_path, class: "btn btn-outline-success" %> </p>
+      <h2 class="text-center m-1">My Bags</h2>
+      <% bags.each do |bag| %>
+        <p class="text-center"><%= link_to "Bag #{bag.name}", bag, class: "btn btn-outline-primary" %> </p>
+        <br/>
+      <% end %>
+      <br/>
+      <h2 class="text-center m-1">Bookings to My Bags</h2>
+      <% bookings_as_owner.each do |booking| %>
+        <p class="text-center"><%= link_to "Booking #{booking.id}", [booking.bag, booking],class: "btn btn-outline-primary" %> </p>
+        <br/>
+      <% end %>
     </div>
     <div class="m-1 p-5 border">
-      <h2 class="text-center m-1">Bag Owner</h2>
-      <p>See the bags you have for rent!</p>
-      <p class="text-center"> <%= link_to "See your the bags you have for rent!", my_bags_bags_path, class: "btn btn-outline-danger" %> </p>
+      <h2 class="text-center m-1">My Requested Bags</h2>
+      <% bags_as_customer.each do |bag| %>
+        <%= link_to "Bag #{bag.name}", bag %>
+      <% end %>
+      <br/>
+    <h2 class="text-center m-1">My placed bookings</h2>
+      <% bookings.each do |booking| %>
+        <%= link_to "Booking #{booking.start_date}", [booking.bag, booking] %>
+        <br/>
+      <% end %>
     </div>
   </div>
 </div>

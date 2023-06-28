@@ -11,8 +11,7 @@
         <p class="card-text"><%= bag.sku %></p>
         <p class="card-text"><%= bag.features %></p>
         <%= link_to "Show", bag_path(bag) %>
-        <%= link_to "Edit", edit_bag_path(bag) %>
-        <%= link_to "Delete", bag_path(bag), method: :delete, data: { confirm: "Are you sure?" } %>
+
       </div>
     </li>
   <% end %>

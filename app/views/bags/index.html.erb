@@ -1,12 +1,19 @@
-<h1> All bags </h1>
+<h1><strong> All Bags</strong> </h1>
 
 <ul>
   <% @bags.each do |bag| %>
     <li>
-      <%= link_to bag.name, bag_path(bag) %>
-      <%= bag.price_day %>
-      <%= bag.description %>
-      <%= bag.sku %>
+      <div class="card" style="width: 30rem;">
+        <strong><h5 class="card-title"><%= bag.name %></strong></h5>
+        <img src="..." class="card-img-top" alt="...">
+        <p class="card-text"><%= bag.description %></p>
+        <p class="card-text"><%= bag.price_day %></p>
+        <p class="card-text"><%= bag.sku %></p>
+        <p class="card-text"><%= bag.features %></p>
+        <%= link_to "Show", bag_path(bag) %>
+        <%= link_to "Edit", edit_bag_path(bag) %>
+        <%= link_to "Delete", bag_path(bag), method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
     </li>
   <% end %>
 </ul>

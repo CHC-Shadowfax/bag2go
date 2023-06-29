@@ -1,41 +1,142 @@
-<div class="container">
+<!--primer container-->
+<section class="container1">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6 text-center">
+        <h1 class="m-3"><strong>Bags2go!</strong></h1>
+        <p>We have the perfect bag, rent with us!</p>
+        <p class="text-center"> <%= link_to "See our Bags!", bags_path, class: "btn btn-outline-primary" %> </p>
+        <p class="text-center"><%= link_to "List your Bag!",  new_bag_path, class: "btn btn-outline-success" %></p>
+      </div>
+      <div class="col-6">
+       <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/maleta1.png" class="d-block w-100" alt="maleta aeropuerto">
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+          </div>
+        </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!--segundo container-->
+  <section class="container2">
+    <div class="container">
+      <div class="row text-align-center text-center">
+        <div class="col-4">
+          <i class="fa-solid fa-person-walking-luggage"></i>
+          <h2>Find your perfect bag for travelling</h2>
+        </div>
+        <div class="col-4">
+          <i class="fa-solid fa-suitcase"></i>
+          <h2>Find a Backpack or suitcase</h2>
+        </div>
+        <div class="col-4">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <h2>Make money by renting your bag!</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--tercer container-->
+<section class="container3 text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+       <i class="fa-solid fa-people-carry-box"></i>
+        <h2>How it works?</h2>
+        <h4>1. Sign in as a user or an owner</h4>
+        <h4>2. Find the perfect bag for your trip</h4>
+        <h4>3. Book it</h4>
+        <h4>4. Pick it up</h4>
+        <h4>5. Enjoy your trip</h4>
+        <h4>6. Return it</h3>
+      </div>
+    </div>
+ </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%# <div class="container">
   <div class="row justify-content-center text-center">
     <h1 class="m-3"><strong>Bags2go!</strong></h1>
     <p>We have the perfect bag, rent with us!</p>
   </div>
-</div>
+</div> %>
 
-<div class="container">
+<%# <div class="container">
   <div class="d-flex justify-content-between">
     <div class="m-1 p-5 border">
       <h2 class="text-center m-1">All Bags</h2>
       <p>Choose a bag you like!</p>
       <p class="text-center"> <%= link_to "See our Bags!", bags_path, class: "btn btn-outline-primary" %> </p>
-    </div>
-    <div class="m-1 p-5 border">
+    <%# </div> %>
+    <%# <div class="m-1 p-5 border">
       <h2 class="text-center m-1">My Bags</h2>
       <% bags.each do |bag| %>
-        <p class="text-center"><%= link_to "Bag #{bag.name}", bag, class: "btn btn-outline-primary" %> </p>
-        <br/>
+        <%# <p class="text-center"><%= link_to "Bag #{bag.name}", bag, class: "btn btn-outline-primary" %> </p>
+        <%# <br/>
       <% end %>
-      <br/>
+      <%# <br/>
       <h2 class="text-center m-1">Bookings to My Bags</h2>
       <% bookings_as_owner.each do |booking| %>
-        <p class="text-center"><%= link_to "Booking #{booking.id}", [booking.bag, booking],class: "btn btn-outline-primary" %> </p>
-        <br/>
+        <%# <p class="text-center"><%= link_to "Booking #{booking.id}", [booking.bag, booking],class: "btn btn-outline-primary" %> </p>
+        <%# <br/>
       <% end %>
-    </div>
+    <%# </div>
     <div class="m-1 p-5 border">
       <h2 class="text-center m-1">My Requested Bags</h2>
       <% bags_as_customer.each do |bag| %>
-        <%= link_to "Bag #{bag.name}", bag %>
-      <% end %>
-      <br/>
+        <%# <%= link_to "Bag #{bag.name}", bag %>
+      <%# <% end %>
+      <%# <br/>
     <h2 class="text-center m-1">My placed bookings</h2>
       <% bookings.each do |booking| %>
-        <%= link_to "Booking #{booking.start_date}", [booking.bag, booking] %>
-        <br/>
+        <%# <%= link_to "Booking #{booking.start_date}", [booking.bag, booking] %>
+        <%# <br/>
       <% end %>
-    </div>
-  </div>
-</div>
+    <%# </div>
+  <%# </div>  %>
+<%# </div> %>

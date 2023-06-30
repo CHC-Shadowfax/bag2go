@@ -9,4 +9,15 @@ class Bag < ApplicationRecord
   validates :description, presence: true, length: { minimum: 10 }
   validates :price_day, comparison: { greater_than: 0 }
   validates :sku, presence: true, uniqueness: true, numericality: { only_integer: true }
+
+  include PgSearch::Model
+
+  pg_search_scope :search_by_name_or_features,
+    against: [:name ],
+    associated_against: {
+      features: [:value]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end

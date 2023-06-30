@@ -3,6 +3,11 @@ class BagsController < ApplicationController
 
   def index
     @bags = Bag.all
+    if params[:query].present?
+      @bags = Bag.search_by_name_or_features(params[:query])
+    else
+      @bags = Bag.all
+    end
   end
 
   def show

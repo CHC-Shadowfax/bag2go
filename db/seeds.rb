@@ -32,7 +32,17 @@ p "Creating bags"
 
 SIZE = %w(small medium large carry-on x-large)
 
-25.times do
+def fake_reservation(price_day)
+  h = {}
+  h[:b_begin] = Faker::Date.between(from: 30.days.ago, to: Date.today)
+  h[:b_end] = h[:b_begin] + rand(2..5).days
+  b_days = h[:b_end] - h[:b_begin]
+  h[:b_real_end_date] = h[:b_end] + rand(0..3).days
+  h[:book_total_price] = b_days * price_day
+  h
+end
+
+50.times do # en la creación de seeds se debe quitar la validación del método, de lo contrario no deja crear historia de bookings
   bag = Bag.create(
     name: Faker::Company.name,
     description: Faker::Lorem.sentence,
@@ -43,6 +53,8 @@ SIZE = %w(small medium large carry-on x-large)
   puts "Bag with id: #{bag.name}, has been created!"
 
   p "Creating Features"
+
+  # populating features
 
   1.times do
     feature = Feature.create(
@@ -72,6 +84,25 @@ SIZE = %w(small medium large carry-on x-large)
       bag_id: bag.id
     )
     puts "Feature Size - #{feature.value} for #{bag.name} has been created!"
+  end
+
+  # populating bookings
+  past_bookings_rand = rand(0..3)
+
+  past_bookings_rand.times do
+    frh = fake_reservation(bag.price_day)
+    booking = Booking.create!(
+      user: User.all.sample,
+      bag_id: bag.id,
+      start_date: frh[:b_begin],
+      end_date: frh[:b_end],
+      real_end_date: frh[:b_real_end_date],
+      book_total_price: frh[:book_total_price],
+      booking_desc: Faker::Lorem.paragraph,
+      active: false,
+      status: "completed"
+    )
+    puts "Booking with id: #{booking.id} withe a price #{booking.book_total_price}, has been created!"
   end
 end
 

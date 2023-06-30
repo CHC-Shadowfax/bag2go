@@ -12,13 +12,13 @@
        <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="images/maleta1.png" class="d-block w-100" alt="maleta aeropuerto">
+            <img src="https://imagenes.elpais.com/resizer/WSLKIlqg0_0RvREWdNuyF35Dx2Y=/1960x1103/cloudfront-eu-central-1.images.arcpublishing.com/prisa/TIEFNHHQSBF2BP3QC7YPH3PIWI.jpg" class="d-block w-100" alt="maleta aeropuerto">
           </div>
           <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="https://camotrek.com/wp-content/uploads/2019/12/hiking-backpack-packed-main.jpg" class="d-block w-100" alt="Camping Bag">
           </div>
           <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="https://www.travelandleisure.com/thmb/NVMbZf-RIGe_KGlg9QnyGATa4pw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-asenlin-40l-travel-backpack-0517-ba0f42a7cca84cf0bdef9ebe7f879f5f.jpg" class="d-block w-100" alt="Backpack">
           </div>
         </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -61,8 +61,8 @@
       <div class="col-6">
        <i class="fa-solid fa-people-carry-box"></i>
         <h2>How it works as a User?</h2>
-        <h4>1. Sign in as a user</h4>
-        <h4>2. Find the perfect bag for your trip</h4>
+        <h4> <%= link_to "1. Sign up as a user", new_user_registration_path %></h4>
+        <h4><%= link_to "2. Find the perfect bag for your trip", bags_path %></h4>
         <h4>3. Book it</h4>
         <h4>4. Pick it up</h4>
         <h4>5. Enjoy your trip</h4>
@@ -71,8 +71,8 @@
       <div class="col-6">
        <i class="fa-solid fa-business-time"></i>
         <h2>How it works as an Owner?</h2>
-        <h4>1. Sign in as an owner</h4>
-        <h4>2. List you bag</h4>
+        <h4><%= link_to "1. Sign up as a owner", new_user_registration_path %></h4>
+        <h4><%= link_to "2. List your Bag",  new_bag_path %></h4>
         <h4>3. Wait for a reservation</h4>
         <h4>4. Confirm reservation</h4>
         <h4>5. Get your bag back</h4>
@@ -80,6 +80,55 @@
     </div>
  </div>
 </section>
+
+<!--cuarto container-->
+<section>
+  <div class="container4">
+   <h2 class="text-center p-3"><strong>Here are some bags you might like!</strong></h2>
+    <div class="row">
+     <div class="col-4">
+      <%= render "shared/card" %>
+     </div>
+     <div class="col-4">
+      <%= render "shared/card" %>
+     </div>
+     <div class="col-4">
+      <%= render "shared/card" %>
+     </div>
+     </div>
+    </div>
+     <div class="container4 row">
+     <div class="col-4">
+      <%= render "shared/card" %>
+     </div>
+     <div class="col-4">
+      <%= render "shared/card" %>
+     </div>
+     <div class="col-4">
+      <%= render "shared/card" %>
+     </div>
+     </div>
+    </div>
+      <div class=" container4 row">
+      <div class="col-4">
+       <%= render "shared/card" %>
+      </div>
+      <div class="col-4">
+        <%= render "shared/card" %>
+      </div>
+      <div class="col-4">
+        <%= render "shared/card" %>
+      </div>
+   </div>
+  </div>
+</section>
+
+<!--quinto container-->
+ <section class="container5">
+  <div class="container-fluid">
+   <%= render "shared/footer" %>
+  </div>
+ </section>
 
 
 

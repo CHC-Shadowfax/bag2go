@@ -25,3 +25,4 @@ class PagesController < ApplicationController
     @bookings = current_user.bookings_as_owner
   end
 end
+

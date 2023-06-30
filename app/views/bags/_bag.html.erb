@@ -8,8 +8,8 @@
       <li><strong>SKU </strong> <%= bag.sku%></li>
       <li><strong>Features </strong> <%= bag.features%></li>
 
-  <% if @bag.photo.attached? %>
-    <%= image_tag @bag.photo, style: 'width: 100px; height: 100px' %>
+  <% if bag.photo.attached? %>
+    <%= cl_image_tag bag.photo.key, height: 200, width: 200, crop: :fill%>
   <% end %>
 
     </ul>

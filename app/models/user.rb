@@ -13,7 +13,7 @@ class User < ApplicationRecord
   # Son los bags que ha reservado el usuario
   has_many :bags_as_customer, through: :bookings, source: :bag
 
-  validates :user_type, presence: true, inclusion: { in: %w[owner renter] }
+  # validates :user_type, presence: true, inclusion: { in: %w[owner renter] }
 
 
   # def is_owner_of_this_(bag)

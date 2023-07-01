@@ -50,10 +50,9 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 gem 'faker'
-gem 'htmlbeautifier'
+gem "htmlbeautifier"
 
-
-
+gem "pg_search"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -61,10 +60,13 @@ gem 'htmlbeautifier'
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
+gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
-  gem "dotenv-rails"
+  # gem "dotenv-rails"
 end
 
 group :development do

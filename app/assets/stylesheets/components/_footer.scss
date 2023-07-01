@@ -22,14 +22,15 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #D23333;
+  color: whitesmoke;
 }
 
-.footer-about-us {
-  color: $white;
+.footer-about-us a:hover {
+  color: $light-gray;
+  // text-decoration: none;
 }
 
 .link-underline-light {
-  border-bottom: 1px solid $light-gray;
+  // border-bottom: 1px solid $light-gray;
   color: $light-gray;
 }

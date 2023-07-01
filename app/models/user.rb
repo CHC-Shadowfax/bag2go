@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bags
   has_many :bookings
+  has_one_attached :photo
 
   # Son logs bookings que ha recibido los bags del usuario
   has_many :bookings_as_owner, through: :bags, source: :bookings

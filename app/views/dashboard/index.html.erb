@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container p-2">
   <div class="row justify-content-center text-center">
     <h1 class="m-3"><strong>Bags2go!</strong></h1>
     <p>We have the perfect bag, rent with us!</p>
@@ -8,10 +8,15 @@
   <div class="row">
     <div class="col-12">
       <h2 class="text-center m-1">My Bags</h2>
-      <ul class="list-group list-group-horizontal">
+      <ul class="list-group list-group-horizontal d-flex">
         <% bags.each do |bag| %>
-          <li class="list-group-item text-center"><%= link_to "Bag #{bag.name}", bag, class: "btn btn-outline-primary" %> </li>
-          <br/>
+          <li class="list-group-item text-center booking-card col-4 m-3">
+            <h5 class="card-title"><%= bag.name %></h5>
+            <i class="fa-solid fa-person-walking-luggage"></i>
+            <p class="card-text"><strong>Price</strong>:$<%= bag.price_day %></p>
+            <p class="card-text"><strong>SKU</strong>:<%= bag.sku %></p>
+            <p class="text-center"><%= link_to "More info", bag, class: "btn btn-primary btn-sm" %> </p>
+          </li>
         <% end %>
       </ul>
       <br/>
@@ -22,12 +27,19 @@
   <div class="row">
     <div class="col-12">
       <h2 class="text-center m-1">Bookings to My Bags</h2>
-      <ul class="list-group list-group-horizontal">
-        <% bookings_as_owner.each do |booking| %>
-          <li class="list-group-item text-center"><%= link_to "Booking #{booking.id}", [booking.bag, booking], class: "btn btn-outline-primary" %> </li>
-          <br/>
-        <% end %>
-      </ul>
+      <div>
+        <ul class="list-group list-group-horizontal d-flex">
+          <% bookings_as_owner.each do |booking| %>
+            <li class="list-group-item text-center booking-card m-3">
+              <h5 class="card-title mt-2"><%= booking.bag.name %></h5>
+              <i class="fa-solid fa-people-carry-box"></i>
+              <p class="card-text"><strong>Price</strong>:$<%= booking.bag.price_day %></p>
+              <p class="card-text"><strong>SKU</strong>:<%= booking.bag.sku %></p>
+              <p class="text-center"><%= link_to "Booking Info", [booking.bag, booking],class: "btn btn-primary btn-sm" %> </p>
+            </li>
+          <% end %>
+        </ul>
+      </div>
       <br/>
     </div>
   </div>
@@ -47,7 +59,7 @@
       <ol>
         <h2 class="text-center m-1">My placed bookings</h2>
         <% bookings.each do |booking| %>
-          <li> <%= link_to "#{booking.bag.name}, Start date: #{booking.start_date}", [booking.bag, booking] %></li>
+          <li><%= link_to "#{booking.bag.name}, Start date: #{booking.start_date}", [booking.bag, booking] %> </li>
         <% end %>
       </ol>
       <br/>

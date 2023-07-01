@@ -1,8 +1,13 @@
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+<% @bags.each do |bag| %>
+  <%= link_to bag_path(bag), class: "m-1 border bag-container col-4" do %>
+    <h5 class="card-title"><%= bag.name %></h5>
+    <center> <%= cl_image_tag bag.photo.key %> </center>
+    <p class="card-text"><strong>Description</strong>:<%= bag.description %></p>
+    <p class="card-text"><strong>Price</strong>:$<%= bag.price_day %></p>
+    <p class="card-text"><strong>SKU</strong>:<%= bag.sku %></p>
+    <% bag.features.each do |feature| %>
+      <p class="card-text"><strong><%= feature.name %></strong>: <%= feature.value %></p>
+    <% end %>
+    <%#= link_to "More info", bag_path(bag), class: 'btn btn-primary' %>
+  <% end %>
+<% end %>

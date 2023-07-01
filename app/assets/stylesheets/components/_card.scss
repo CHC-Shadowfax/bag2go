@@ -2,6 +2,8 @@
   width: 14rem;
   padding: 20px;
   text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
 
   img {
     width: 100px;
@@ -15,12 +17,14 @@
   h5 {
     color: $gray;
     font-weight: bold;
+    text-align: center;
   }
   p {
     padding: 0;
     margin: 0;
     font-size: 15px;
     text-decoration: none;
+    text-align: center;
   }
 
   a {

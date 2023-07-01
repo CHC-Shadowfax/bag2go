@@ -1,19 +1,21 @@
- 
-<h1>Booking info</h1>
-<h2>Your booking request for: <%= booking.bag.name %> </h2>
-<p> Booking start date: <%= booking.start_date %></p>
-<p> Booking end date: <%= booking.end_date %></p>
-<p> Booking descrption: <%= booking.booking_desc %></p>
-<p> Booking total price: <%= booking.book_total_price %></p>
-<p> Booking date: <%= booking.created_at %></p>
-<h2>Customer information</h2>
-<p> User first name: <%= booking.user.first_name %></p>
-<p> User last name: <%= booking.user.last_name %></p>
-<p> User email: <%= booking.user.email %></p>
-<p> User phone: <%= booking.user.mobile_phone %> </p>
-<p> User address: <%= booking.user.address %> </p>
-<h2>Booking status: </h2>
-<p> <%= booking.status %></p>
-<% if @bag.user_id == current_user.id %>
-  <%= link_to "Bookings", bag_bookings_path(@bag) %>
-<% end %>
+<h1 class="text-center p-2" ><strong> Booking Request Information</strong> </h1>
+<h2 class="second-title"><strong>Your booking request for: <%= booking.bag.name %></strong> </h2>
+<div class= "binfo-container">
+  <p><strong> Booking start date:</strong> <%= booking.start_date %></p>
+  <p><strong> Booking end date:</strong> <%= booking.end_date %></p>
+  <p><strong> Booking descrption:</strong> <%= booking.booking_desc %></p>
+  <p><strong> Booking total price:</strong> <%= booking.book_total_price %></p>
+  <p><strong> Booking date:</strong> <%= booking.created_at %></p>
+</div>
+<h2 class="second-title"><strong>Customer information</strong></h2>
+<div class= "binfo-container2">
+  <p><strong> User first name:</strong> <%= booking.user.first_name %></p>
+  <p> <strong>User last name:</strong>  <%= booking.user.last_name %></p>
+  <p> <strong>User email:</strong>  <%= booking.user.email %></p>
+  <p> <strong>User phone:</strong>  <%= booking.user.mobile_phone %> </p>
+  <p> <strong>User address:</strong>  <%= booking.user.address %> </p>
+  <h2 class="second-title">Booking status: </h2>
+  <h3 class=.binfo-container3><strong> <%= booking.status %></strong></h3>
+  <% if @bag.user_id == current_user.id %>
+    <%= link_to "Bookings", bag_bookings_path(@bag) %>
+  <% end %>

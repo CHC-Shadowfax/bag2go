@@ -84,13 +84,10 @@
   <div class="container4">
     <h2 class="text-center p-3"><strong>Here are some bags you might like!</strong></h2>
     <div class="row gx-5">
-      <% @bags.each do |bag| %>
-        <div class="col-4 p-2">
-          <%= render "shared/card" %>
-        </div>
-      <% end %>
+      <%= render "shared/card" %>
     </div>
   </div>
+</div>
 </section>
 <!--quinto container-->
 <section class="container5">

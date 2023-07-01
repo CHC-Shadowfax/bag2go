@@ -3,7 +3,9 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <i class="fa-solid fa-suitcase"></i>
     <% end %>
-    <h4 class="text-icon fs-6 p1 m4"> <strong>Bags2go!</strong></h4>
+    <%= link_to root_path, class: "text-icon fs-6 p1 m4 text-decoration-none" do %>
+    <h4> <strong>Bags2go!</strong></h4>
+    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,9 +14,6 @@
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

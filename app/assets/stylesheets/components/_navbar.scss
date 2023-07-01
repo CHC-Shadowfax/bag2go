@@ -6,6 +6,11 @@
   z-index: 6000;
 }
 
+.text-decoration-none {
+  text-decoration: none;
+  color: black;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -15,7 +20,18 @@
 }
 
 .text-icon {
-  position: absolute;
-  left: 50px;
-  top: 18px;
+  flex: auto;
+  justify-items: flex-start;
+  margin-bottom: 0;
+}
+
+.home-card-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-card-container > * {
+  width: calc(100% / 4) !important;
 }

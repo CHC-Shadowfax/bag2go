@@ -14,12 +14,6 @@
             <div class="carousel-item active">
               <img src="https://imagenes.elpais.com/resizer/WSLKIlqg0_0RvREWdNuyF35Dx2Y=/1960x1103/cloudfront-eu-central-1.images.arcpublishing.com/prisa/TIEFNHHQSBF2BP3QC7YPH3PIWI.jpg" class="d-block w-100" alt="maleta aeropuerto">
             </div>
-            <div class="carousel-item">
-              <img src="https://camotrek.com/wp-content/uploads/2019/12/hiking-backpack-packed-main.jpg" class="d-block w-100" alt="Camping Bag">
-            </div>
-            <div class="carousel-item">
-              <img src="https://www.travelandleisure.com/thmb/NVMbZf-RIGe_KGlg9QnyGATa4pw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-asenlin-40l-travel-backpack-0517-ba0f42a7cca84cf0bdef9ebe7f879f5f.jpg" class="d-block w-100" alt="Backpack">
-            </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -39,16 +33,16 @@
   <div class="container">
     <div class="row text-align-center text-center">
       <div class="col-4">
-        <i class="fa-solid fa-person-walking-luggage"></i>
-        <h2>Find your perfect bag for travelling</h2>
+        <i class="fa-solid fa-person-walking-luggage "></i>
+        <h2><%= link_to "Find your perfect bag for travelling", bags_path%></h2>
       </div>
       <div class="col-4">
         <i class="fa-solid fa-suitcase"></i>
-        <h2>Find a Backpack or suitcase</h2>
+        <h2> <%= link_to "Find a Backpack or suitcase", bags_path %></h2>
       </div>
       <div class="col-4">
         <i class="fa-solid fa-bag-shopping"></i>
-        <h2>Make money by renting your bag!</h2>
+        <h2><%= link_to "Make money by renting your bag!", new_bag_path   %></h2>
       </div>
     </div>
   </div>
@@ -83,8 +77,8 @@
 <section>
   <div class="container4">
     <h2 class="text-center p-3"><strong>Here are some bags you might like!</strong></h2>
-    <div class="row gx-5">
-      <%= render "shared/card" %>
+    <div class="home-card-container">
+        <%= render "shared/card" %>
     </div>
   </div>
 </div>

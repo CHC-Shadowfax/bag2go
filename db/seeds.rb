@@ -41,8 +41,20 @@ def fake_reservation(price_day)
   h[:book_total_price] = b_days * price_day
   h
 end
-
+MALETAS = [
+  'https://hips.hearstapps.com/hmg-prod/images/best-luggage-1554348191.png?crop=1.00xw:1.00xh;0,0&resize=1200:*',
+  'https://www.refinery29.com/images/11263071.jpg?crop=40%3A21',
+  'https://s.alicdn.com/@sc04/kf/H4d2f3011653e402dae2da29719fad6b22.png',
+  'https://monos.com/cdn/shop/products/Product_CheckIn_L_OliveGreen_Front_389ebd0d-7af4-4264-8845-fcf9df14d4b1_1512x.jpg?v=1678767276',
+  'https://july.com/static/8474afce707697a89bfa85abe4f6d217/049b4/CHKP_Navy_1_0f788e14d9.webp',
+  'https://hips.hearstapps.com/hmg-prod/images/best-luggage-1554348191.png?crop=1.00xw:1.00xh;0,0&resize=1200:*',
+  'https://shop.samsonite.com/dw/image/v2/BBZB_PRD/on/demandware.static/-/Sites-product-catalog/default/dw50a2bab2/collections/_samsonite/freeform/500x500/782571041_28Spin.jpg?sw=912&sh=912',
+  'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6527/6527115_sd.jpg',
+  'https://shop.samsonite.com/dw/image/v2/BBZB_PRD/on/demandware.static/-/Sites-product-catalog/default/dw814596aa/collections/_samsonite/centric/500x500/1026902824be01.jpg?sw=912&sh=912',
+  'https://july.com/static/d1711b6b5172dadd9e7e8de8d158b402/52a33/1_86a10a9d1a.webp'
+]
 50.times do # en la creación de seeds se debe quitar la validación del método, de lo contrario no deja crear historia de bookings
+  file = URI.open(MALETAS.sample)
   bag = Bag.create(
     name: Faker::Company.name,
     description: Faker::Lorem.sentence,
@@ -50,6 +62,8 @@ end
     price_day: Faker::Commerce.price(range: 10..100.0),
     user: User.all.sample,
   )
+  bag.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
   puts "Bag with id: #{bag.name}, has been created!"
 
   p "Creating Features"

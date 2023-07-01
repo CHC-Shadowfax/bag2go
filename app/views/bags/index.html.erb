@@ -13,22 +13,20 @@
 </div>
 
 <h1><strong> All Bags</strong> </h1>
-
 <ul>
   <% @bags.each do |bag| %>
     <li>
       <div class="card" style="width: 30rem;">
-        <strong><h5 class="card-title"><%= bag.name %></strong></h5>
+        <strong>
+          <h5 class="card-title"><%= bag.name %></strong></h5>
         <img src="..." class="card-img-top" alt="...">
         <p class="card-text"><%= bag.description %></p>
         <p class="card-text"><%= bag.price_day %></p>
         <p class="card-text"><%= bag.sku %></p>
         <p class="card-text"><%= bag.features %></p>
         <%= link_to "Show", bag_path(bag) %>
-
       </div>
     </li>
   <% end %>
 </ul>
-
 <%= link_to "New bag", new_bag_path %>

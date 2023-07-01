@@ -1,9 +1,12 @@
-<h1><strong> Edit your inventory:</strong> </h1>
-
-<%= render 'simple_form', bag: @bag %>
-
-<div>
-  <%= link_to "Show this bag", @bags %> |
-  <%= link_to "Back to bags index", bags_path %>
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="container p-5 rounded">
+        <h1><strong>Edit this bag</strong> </h1>
+        <%= render 'simple_form', bag: @bag %>
+        <%= link_to "Show this bag", @bags, class: "btn btn-link link-dark" %> |
+        <%= link_to "Back to bags index", bags_path, class: "btn btn-link link-dark" %>
+      </div>
+    </div>
+  </div>
 </div>

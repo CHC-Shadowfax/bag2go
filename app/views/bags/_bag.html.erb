@@ -1,17 +1,10 @@
-<div>
-  <p>
-    <strong>My bag:</strong>
-    <ul>
-      <li><strong>Name</strong> <%=bag.name%></li>
-      <li><strong>Description</strong> <%= bag.description%></li>
-      <li><strong>Price </strong> $<%= bag.price_day%></li>
-      <li><strong>SKU </strong> <%= bag.sku%></li>
-      <% bag.features.each do |feature| %>
-        <p><%= feature.name %>: <%= feature.value %></p>
-      <% end %>
-      <% if bag.photo.attached? %>
-        <%= cl_image_tag bag.photo.key, height: 200, width: 200, crop: :fill%>
-      <% end %>
-    </ul>
-  </p>
+<div class= "border bag-show">
+  <h5 class="card-title"><%= bag.name %></h5>
+   <center> <%= cl_image_tag bag.photo.key %> </center>
+   <p class="card-text"><strong>Description</strong>:<%= bag.description %></p>
+   <p class="card-text"><strong>Price</strong>:$<%= bag.price_day %></p>
+   <p class="card-text"><strong>SKU</strong>:<%= bag.sku %></p>
+   <% bag.features.each do |feature| %>
+     <p class="card-text"><strong><%= feature.name %></strong>: <%= feature.value %></p>
+   <% end %>
 </div>

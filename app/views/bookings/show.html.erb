@@ -1,12 +1,11 @@
 <div>
   <%= render "binfo", booking: booking %>
-
   <% if !['confirm', 'cancelled'].include?(booking.status) %>
     <p>
-    <% if @booking.user_id != current_user.id %>
-      <%= link_to "Confirm Booking", bag_booking_path(@bag, booking, update_status: 'confirm'), data: {turbo_method: :patch, turbo_confirm: 'Are you sure you want to confirm this booking?'} %>
-      <%= link_to "Reject Booking", bag_booking_path(@bag, booking, update_status: 'cancelled'), data: {turbo_method: :patch, turbo_confirm: 'Are you sure you want to cancell this booking?'} %>
-    <% end %>
+      <% if @booking.user_id != current_user.id %>
+        <%= link_to "Confirm Booking", bag_booking_path(@bag, booking, update_status: 'confirm'), data: {turbo_method: :patch, turbo_confirm: 'Are you sure you want to confirm this booking?'} %>
+        <%= link_to "Reject Booking", bag_booking_path(@bag, booking, update_status: 'cancelled'), data: {turbo_method: :patch, turbo_confirm: 'Are you sure you want to cancell this booking?'} %>
+      <% end %>
     </p>
   <% end %>
 </div>

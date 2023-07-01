@@ -1,26 +1,19 @@
- <h1>Booking info</h1>
-
-  <h2>Your booking request for: <%= booking.bag.name %> </h2>
-  <p> Booking start date: <%= booking.start_date %></p>
-  <p> Booking end date: <%= booking.end_date %></p>
-  <p> Booking descrption: <%= booking.booking_desc %></p>
-  <p> Booking total price: <%= booking.book_total_price %></p>
-  <p> Booking date: <%= booking.created_at %></p>
-
-  <h2>Customer information</h2>
-  <p> User first name: <%= booking.user.first_name %></p>
-  <p> User last name: <%= booking.user.last_name %></p>
-  <p> User email: <%= booking.user.email %></p>
-  <p> User phone: <%= booking.user.mobile_phone %> </p>
-  <p> User address: <%= booking.user.address %> </p>
-
-
-
-
-
-  <h2>Booking status: </h2>
-  <p> <%= booking.status %></p>
-
+ 
+<h1>Booking info</h1>
+<h2>Your booking request for: <%= booking.bag.name %> </h2>
+<p> Booking start date: <%= booking.start_date %></p>
+<p> Booking end date: <%= booking.end_date %></p>
+<p> Booking descrption: <%= booking.booking_desc %></p>
+<p> Booking total price: <%= booking.book_total_price %></p>
+<p> Booking date: <%= booking.created_at %></p>
+<h2>Customer information</h2>
+<p> User first name: <%= booking.user.first_name %></p>
+<p> User last name: <%= booking.user.last_name %></p>
+<p> User email: <%= booking.user.email %></p>
+<p> User phone: <%= booking.user.mobile_phone %> </p>
+<p> User address: <%= booking.user.address %> </p>
+<h2>Booking status: </h2>
+<p> <%= booking.status %></p>
 <% if @bag.user_id == current_user.id %>
   <%= link_to "Bookings", bag_bookings_path(@bag) %>
 <% end %>

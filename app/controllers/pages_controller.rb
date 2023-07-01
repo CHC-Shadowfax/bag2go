@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   helper_method :bags, :bookings_as_owner, :bags_as_customer, :bookings
 
   def home
-    @bags = Bag.all.sample(9)
+    @bags = Bag.all.sample(6)
   end
 
   private
@@ -26,4 +26,3 @@ class PagesController < ApplicationController
     @bookings = current_user.bookings_as_owner
   end
 end
-

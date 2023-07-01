@@ -1,4 +1,4 @@
-
+<h1><strong> All Bags</strong> </h1>
 <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
     <%= form_with url: bags_path, method: :get, class: "d-flex" do %>
@@ -11,24 +11,62 @@
     <% end %>
   </div>
 </div>
-
-<h1><strong> All Bags</strong> </h1>
-
-<ul>
-  <% @bags.each do |bag| %>
-    <li>
-      <div class="card" style="width: 30rem;">
-        <strong><h5 class="card-title"><%= bag.name %></strong></h5>
-        <img src="..." class="card-img-top" alt="...">
-        <p class="card-text"><%= bag.description %></p>
-        <p class="card-text"><%= bag.price_day %></p>
-        <p class="card-text"><%= bag.sku %></p>
-        <p class="card-text"><%= bag.features %></p>
-        <%= link_to "Show", bag_path(bag) %>
-
+<section>
+  <div class="container4">
+    <h2 class="text-center p-3"><strong>Find your perfect bag!</strong></h2>
+    <div class="row">
+      <div class="col-4">
+        <%= render "shared/card" %>
       </div>
-    </li>
-  <% end %>
+      <div class="col-4">
+        <%= render "shared/card" %>
+      </div>
+      <div class="col-4">
+        <%= render "shared/card" %>
+      </div>
+    </div>
+  </div>
+  <div class="container4 row">
+    <div class="col-4">
+      <%= render "shared/card" %>
+    </div>
+    <div class="col-4">
+      <%= render "shared/card" %>
+    </div>
+    <div class="col-4">
+      <%= render "shared/card" %>
+    </div>
+  </div>
+</div>
+<div class=" container4 row">
+  <div class="col-4">
+    <%= render "shared/card" %>
+  </div>
+  <div class="col-4">
+    <%= render "shared/card" %>
+  </div>
+  <div class="col-4">
+    <%= render "shared/card" %>
+  </div>
+</div>
+</div>
+</section>
+<%= link_to "New bag", new_bag_path %>
+<%# Path: app/views/bags/index.html.erb %>
+<!-- <ul>
+<% @bags.each do |bag| %>
+  <li>
+    <div class="card" style="width: 30rem;">
+      <strong>
+        <h5 class="card-title"><%= bag.name %></strong></h5>
+      <img src="..." class="card-img-top" alt="...">
+      <p class="card-text"><%= bag.description %></p>
+      <p class="card-text"><%= bag.price_day %></p>
+      <p class="card-text"><%= bag.sku %></p>
+      <p class="card-text"><%= bag.features %></p>
+      <%= link_to "Show", bag_path(bag) %>
+    </div>
+  </li>
+<% end %>
 </ul>
-
 <%= link_to "New bag", new_bag_path %>

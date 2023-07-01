@@ -21,6 +21,6 @@
   <h2>Booking status: </h2>
   <p> <%= booking.status %></p>
 
-<% if @booking.user_id == current_user.id %>
+<% if @bag.user_id == current_user.id %>
   <%= link_to "Bookings", bag_bookings_path(@bag) %>
 <% end %>

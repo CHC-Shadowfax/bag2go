@@ -1,11 +1,9 @@
-class PagesController < ApplicationController
-  before_action :authenticate_user!, only: :home
-
-  # Esto expone el metodo bags dentro de la vista de home.html.erb
+class DashboardController < ApplicationController
+  # Asegurar que ya este loggeado el usuario
   helper_method :bags, :bookings_as_owner, :bags_as_customer, :bookings
+  before_action :authenticate_user!
 
-  def home
-    @bags = Bag.all.sample(9)
+  def index
   end
 
   private
@@ -26,4 +24,3 @@ class PagesController < ApplicationController
     @bookings = current_user.bookings_as_owner
   end
 end
-

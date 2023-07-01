@@ -15,9 +15,9 @@
   <% end %>
 
   <% if @bag.user_id == current_user.id %>
-  <%= link_to "Delete",
-    bag_path(@bag),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+    <%= link_to "Delete",
+      bag_path(@bag),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
   <% end %>
 </div>

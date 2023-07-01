@@ -2,11 +2,11 @@
 <section class="container1">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-6 text-center">
-        <h1 class="m-3"><strong>Bags2go!</strong></h1>
+      <div class="col-6 text-center p-5">
+        <h1 class="m3"><strong>Bags2go!</strong></h1>
         <h4>We have the perfect bag, rent with us!</h4>
-        <p class="text-center"> <%= link_to "See our Bags!", bags_path, class: "btn btn-outline-primary btn-sm" %> </p>
-        <p class="text-center"><%= link_to "List your Bag!",  new_bag_path, class: "btn btn-outline-success btn-sm" %></p>
+        <p class="text-center"> <%= link_to "See our Bags!", bags_path, class: "btn btn-outline-primary btn-lg" %> </p>
+        <p class="text-center"><%= link_to "List your Bag!",  new_bag_path, class: "btn btn-outline-success btn-lg" %></p>
       </div>
       <div class="col-6">
         <div id="carouselExample" class="carousel slide">
@@ -60,7 +60,7 @@
       <div class="col-6">
         <i class="fa-solid fa-people-carry-box"></i>
         <h2>How it works as a User?</h2>
-        <h4><%= link_to "1. Sign up as a user", new_user_registration_path %></h4>
+        <h4><%= link_to "1. Sign up/Login", new_user_registration_path %></h4>
         <h4><%= link_to "2. Find the perfect bag for your trip", bags_path %></h4>
         <h4>3. Book it</h4>
         <h4>4. Pick it up</h4>
@@ -70,12 +70,11 @@
       <div class="col-6">
         <i class="fa-solid fa-business-time"></i>
         <h2>How it works as an Owner?</h2>
-        <h4><%= link_to "1. Sign up as a owner", new_user_registration_path %></h4>
+        <h4><%= link_to "1. Sign up/Login", new_user_registration_path %></h4>
         <h4><%= link_to "2. List your Bag",  new_bag_path %></h4>
         <h4>3. Wait for a reservation</h4>
         <h4>4. Confirm reservation</h4>
         <h4>5. Get your bag back</h4>
-        <p><%= link_to "My Bags", my_bags_bags_path %></p>
       </div>
     </div>
   </div>
@@ -85,13 +84,10 @@
   <div class="container4">
     <h2 class="text-center p-3"><strong>Here are some bags you might like!</strong></h2>
     <div class="row gx-5">
-      <% @bags.each do |bag| %>
-        <div class="col-4 p-2">
-          <%= render "shared/card" %>
-        </div>
-      <% end %>
+      <%= render "shared/card" %>
     </div>
   </div>
+</div>
 </section>
 <!--quinto container-->
 <section class="container5">

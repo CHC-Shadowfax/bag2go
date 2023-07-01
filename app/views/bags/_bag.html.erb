@@ -6,12 +6,12 @@
       <li><strong>Description</strong> <%= bag.description%></li>
       <li><strong>Price </strong> $<%= bag.price_day%></li>
       <li><strong>SKU </strong> <%= bag.sku%></li>
-      <li><strong>Features </strong> <%= bag.features%></li>
-
-  <% if bag.photo.attached? %>
-    <%= cl_image_tag bag.photo.key, height: 200, width: 200, crop: :fill%>
-  <% end %>
-
+      <% bag.features.each do |feature| %>
+        <p><%= feature.name %>: <%= feature.value %></p>
+      <% end %>
+      <% if bag.photo.attached? %>
+        <%= cl_image_tag bag.photo.key, height: 200, width: 200, crop: :fill%>
+      <% end %>
     </ul>
   </p>
 </div>

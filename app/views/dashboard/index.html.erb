@@ -4,33 +4,53 @@
     <p>We have the perfect bag, rent with us!</p>
   </div>
 </div>
-
-<div class="container">
-  <div class="d-flex justify-content-between">
-    <div class="m-1 p-5 border">
+<div class="container-mybags">
+  <div class="row">
+    <div class="col-12">
       <h2 class="text-center m-1">My Bags</h2>
-      <% bags.each do |bag| %>
-         <p class="text-center"><%= link_to "Bag #{bag.name}", bag, class: "btn btn-outline-primary" %> </p>
-         <br/>
-      <% end %>
-       <br/>
+      <ul class="list-group list-group-horizontal">
+        <% bags.each do |bag| %>
+          <li class="list-group-item text-center"><%= link_to "Bag #{bag.name}", bag, class: "btn btn-outline-primary" %> </li>
+          <br/>
+        <% end %>
+      </ul>
+      <br/>
+    </div>
+  </div>
+</div>
+<div class="container--bookings">
+  <div class="row">
+    <div class="col-12">
       <h2 class="text-center m-1">Bookings to My Bags</h2>
-      <% bookings_as_owner.each do |booking| %>
-        <p class="text-center"><%= link_to "Booking #{booking.id}", [booking.bag, booking],class: "btn btn-outline-primary" %> </p>
-         <br/>
-      <% end %>
-     </div>
-    <div class="m-1 p-5 border">
-      <h2 class="text-center m-1">My Requested Bags</h2>
-      <% bags_as_customer.each do |bag| %>
-        <%= link_to "Bag #{bag.name}", bag %>
-       <% end %>
-       <br/>
-    <h2 class="text-center m-1">My placed bookings</h2>
-      <% bookings.each do |booking| %>
-         <%= link_to "Booking #{booking.start_date}", [booking.bag, booking] %>
-        <br/>
-      <% end %>
+      <ul class="list-group list-group-horizontal">
+        <% bookings_as_owner.each do |booking| %>
+          <li class="list-group-item text-center"><%= link_to "Booking #{booking.id}", [booking.bag, booking], class: "btn btn-outline-primary" %> </li>
+          <br/>
+        <% end %>
+      </ul>
+      <br/>
+    </div>
+  </div>
+</div>
+<div class="container-requested">
+  <div class="row">
+    <div class="col-6 p-3 border">
+      <ol>
+        <h2 class="text-center m-1">My Requested Bags</h2>
+        <% bags_as_customer.each do |bag| %>
+          <li><%= link_to "Bag #{bag.name}", bag %></li>
+        <% end %>
+      </ol>
+      <br/>
+    </div>
+    <div class="col-6 p-3 border">
+      <ol>
+        <h2 class="text-center m-1">My placed bookings</h2>
+        <% bookings.each do |booking| %>
+          <li> <%= link_to "#{booking.bag.name}, Start date: #{booking.start_date}", [booking.bag, booking] %></li>
+        <% end %>
+      </ol>
+      <br/>
     </div>
   </div>
 </div>

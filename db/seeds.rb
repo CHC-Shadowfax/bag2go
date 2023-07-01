@@ -51,7 +51,19 @@ MALETAS = [
   'https://shop.samsonite.com/dw/image/v2/BBZB_PRD/on/demandware.static/-/Sites-product-catalog/default/dw50a2bab2/collections/_samsonite/freeform/500x500/782571041_28Spin.jpg?sw=912&sh=912',
   'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6527/6527115_sd.jpg',
   'https://shop.samsonite.com/dw/image/v2/BBZB_PRD/on/demandware.static/-/Sites-product-catalog/default/dw814596aa/collections/_samsonite/centric/500x500/1026902824be01.jpg?sw=912&sh=912',
-  'https://july.com/static/d1711b6b5172dadd9e7e8de8d158b402/52a33/1_86a10a9d1a.webp'
+  'https://july.com/static/d1711b6b5172dadd9e7e8de8d158b402/52a33/1_86a10a9d1a.webp',
+  'https://cdn.shopify.com/s/files/1/1539/8211/products/DDH_8025_clipped_rev_1_3cb12267-714b-410c-acd8-f2d9aa07b30c.jpg?v=1655761730',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg7qDrTHVQS4gnovtuIKE5h4J-6OFNxGCucIBwXHMeeoEOQ_sF2AYEl6I8l5jaMKIit74&usqp=CAU',
+  'https://m.media-amazon.com/images/I/71JQoMs+T6L._AC_SL1500_.jpg',
+  'https://s7d9.scene7.com/is/image/KiplingBrand/0882256000016_KI6351_654_A.jpg?$xxlarge$&fmt=webp',
+  'https://m.media-amazon.com/images/I/710xg7f6ahL._AC_UY1100_.jpg',
+  'https://m.media-amazon.com/images/I/71uCg26TTiL._AC_UY1100_.jpg',
+  'https://www.switchbacktravel.com/sites/default/files/image_fields/Best%20Of%20Gear%20Articles/Hiking%20and%20Backpacking/Backpacking%20Packs/Osprey%20Atmos%20AG%2065%20backpacking%20pack%20%28green%29.jpg',
+  'https://www.rei.com/media/product/185568',
+  'https://scoutlife.org/wp-content/uploads/2017/04/backpack-1.jpg?w=700',
+  'https://img.guess.com/image/upload/f_auto,q_auto:eco,fl_strip_profile,dpr_1.5,fl_advanced_resize,fl_progressive,w_392,c_scale/v1/NA/Style/ECOMM/S7452948-TPG',
+  'https://cdn.shopify.com/s/files/1/0556/2643/2670/products/3208587_1_500x.png?v=1681357718',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9GPrq7wVTnCm8vg19obDAhwL-dyrHVxOMNrSFgUPAPozTp_5A0pvwSpg-eAXIzEKQ7pU&usqp=CAU'
 ]
 50.times do # en la creación de seeds se debe quitar la validación del método, de lo contrario no deja crear historia de bookings
   file = URI.open(MALETAS.sample)

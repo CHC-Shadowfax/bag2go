@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index', as: :dashboard
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
 
   authenticated :user do
     root to: "pages#home", as: "authenticated_root"

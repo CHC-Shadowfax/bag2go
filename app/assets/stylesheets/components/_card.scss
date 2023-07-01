@@ -35,3 +35,35 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.bag-show {
+  width: 14rem;
+  padding: 20px;
+  text-decoration: none;
+
+  img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  h5 {
+    color: $gray;
+    font-weight: bold;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  a {
+    font-size: 12px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+}
